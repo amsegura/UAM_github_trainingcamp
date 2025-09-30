@@ -16,29 +16,31 @@ body {
 }
 
 .logo {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
     position: absolute;
 }
 
 .izquierda {
+    width: 300px;
     left: 20%; /* Ajusta la posición a la izquierda */
-    top: 20%; /* Ajusta la posición hacia arriba */
+    top: 25%; /* Ajusta la posición hacia arriba */
 }
 
 .derecha {
+    width: 360px;
     right: 20%; /* Ajusta la posición a la derecha */
-    top: 20%; /* Ajusta la posición hacia arriba */
+    top: 25%; /* Ajusta la posición hacia arriba */
 }
 
 .centro {
-    top: 50%; /* Ajusta la posición hacia arriba */
+    width: 250px;
+    top: 65%; /* Ajusta la posición hacia arriba */
     transform: translateY(-50%); /* Centra verticalmente */
 }
 
 .link {
     position: absolute;
-    bottom: 10%; /* Ajusta la posición del enlace */
-    font-size: 24px; /* Tamaño del texto del enlace */
+    bottom: 15%; /* Ajusta la posición del enlace */
+    font-size: 32px; /* Tamaño del texto del enlace */
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
     padding: 10px 20px;
