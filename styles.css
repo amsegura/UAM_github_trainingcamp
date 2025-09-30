@@ -26,9 +26,9 @@ body {
 }
 
 .derecha {
-    width: 360px;
+    width: 450px;
     right: 20%; /* Ajusta la posición a la derecha */
-    top: 25%; /* Ajusta la posición hacia arriba */
+    top: 30%; /* Ajusta la posición hacia arriba */
 }
 
 .centro {
@@ -57,4 +57,15 @@ body {
     width: 100%;
     height: 600px; /* Ajusta la altura según sea necesario */
     border: none; /* Sin borde */
+}
+
+.credit {
+    position: absolute; /* Posiciona el texto en relación a la contenedor */
+    bottom: 5%; /* Ajusta la posición hacia abajo */
+    right: 5%; 
+    font-size: 12px; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    width: auto; /* Asegura que el texto ocupe todo el ancho */
+    opacity: 0.8; /* Hace el texto un poco transparente */
 }
