@@ -33,13 +33,13 @@ body {
 
 .centro {
     width: 250px;
-    top: 65%; /* Ajusta la posición hacia arriba */
+    top: 62%; /* Ajusta la posición hacia arriba */
     transform: translateY(-50%); /* Centra verticalmente */
 }
 
 .link {
     position: absolute;
-    bottom: 15%; /* Ajusta la posición del enlace */
+    bottom: 13%; /* Ajusta la posición del enlace */
     font-size: 32px; /* Tamaño del texto del enlace */
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
