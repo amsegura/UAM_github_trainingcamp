@@ -81,14 +81,14 @@ body {
     }
 
     .derecha {
-        width: 15%; /* Ajusta el tamaño en móviles */
-        right: 5%; /* Centra la imagen */
-        top: 20%; /* Ajusta la posición */
+        width: 45%; /* Ajusta el tamaño en móviles */
+        right: 10%; /* Centra la imagen */
+        top: 10%; /* Ajusta la posición */
     }
 
     .centro {
-        width: 60%; /* Ajusta el tamaño en móviles */
-        top: 45%; /* Ajusta la posición */
+        width: 15%; /* Ajusta el tamaño en móviles */
+        top: 60%; /* Ajusta la posición */
     }
 
     .link {
