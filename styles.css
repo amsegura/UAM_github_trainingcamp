@@ -72,3 +72,36 @@ body {
     width: auto; /* Asegura que el texto ocupe todo el ancho */
     opacity: 0.8; /* Hace el texto un poco transparente */
 }
+
+@media (max-width: 768px) {
+    .izquierda {
+        width: 60%; /* Ajusta el tamaño en móviles */
+        left: 10%; /* Centra la imagen */
+        top: 10%; /* Ajusta la posición */
+    }
+
+    .derecha {
+        width: 60%; /* Ajusta el tamaño en móviles */
+        right: 10%; /* Centra la imagen */
+        top: 20%; /* Ajusta la posición */
+    }
+
+    .centro {
+        width: 60%; /* Ajusta el tamaño en móviles */
+        top: 40%; /* Ajusta la posición */
+    }
+
+    .link {
+        font-size: 16px; /* Reduce el tamaño del texto en móviles */
+        bottom: 10%; /* Ajusta la posición del enlace */
+    }
+
+    .pdf-viewer {
+        height: 400px; /* Ajusta la altura del iframe en móviles */
+    }
+
+    .credit {
+        font-size: 6px; /* Reduce el tamaño del texto en móviles */
+        bottom: 3%; /* Ajusta la posición */
+    }
+}
