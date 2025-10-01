@@ -75,20 +75,20 @@ body {
 
 @media (max-width: 768px) {
     .izquierda {
-        width: 60%; /* Ajusta el tamaño en móviles */
-        left: 10%; /* Centra la imagen */
+        width: 15%; /* Ajusta el tamaño en móviles */
+        left: 5%; /* Centra la imagen */
         top: 10%; /* Ajusta la posición */
     }
 
     .derecha {
-        width: 60%; /* Ajusta el tamaño en móviles */
-        right: 10%; /* Centra la imagen */
+        width: 15%; /* Ajusta el tamaño en móviles */
+        right: 5%; /* Centra la imagen */
         top: 20%; /* Ajusta la posición */
     }
 
     .centro {
         width: 60%; /* Ajusta el tamaño en móviles */
-        top: 40%; /* Ajusta la posición */
+        top: 45%; /* Ajusta la posición */
     }
 
     .link {
