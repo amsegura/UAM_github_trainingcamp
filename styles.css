@@ -10,6 +10,7 @@ body {
     position: relative;
     height: 100vh;
     display: flex;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -17,6 +18,8 @@ body {
 
 .logo {
     position: absolute;
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .izquierda {
