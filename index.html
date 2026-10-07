@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Training</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="images/imdea.png" alt="Logo Izquierda" class="logo izquierda">
-        <img src="images/UAM.png" alt="Logo Derecha" class="logo derecha">
-        <img src="images/github.png" alt="Logo Centro" class="logo centro">
-        <a href="MasterUAM_2025_GitHub.pdf" class="link">GitHub Training</a>
-        <iframe src="MasterUAM_2025_GitHub.pdf"  class="pdf-viewer"></iframe>
-        <p class="credit">Markus Spiske's picture on Unsplash</p> <!-- Texto añadido -->
+
+        <!-- Logos de las instituciones -->
+        <div class="logos-instituciones">
+            <img src="images/imdea.png" alt="Logo IMDEA" class="logo izquierda">
+            <img src="images/UAM.png"   alt="Logo UAM"   class="logo derecha">
+        </div>
+
+        <!-- Logo de GitHub -->
+        <img src="images/github.png" alt="Logo GitHub" class="logo centro">
+
+        <!-- Los dos botones -->
+        <nav class="botones">
+            <a href="MasterUAM_2025_GitHub.pdf" class="link">Presentación</a>
+            <a href="tutorial.html"             class="link">Tutorial</a>
+        </nav>
+
+        <!-- Visor del PDF: oculto, igual que lo tenías.
+             Para mostrarlo, cambia display:none por display:block en .pdf-viewer -->
+        <iframe src="MasterUAM_2025_GitHub.pdf" class="pdf-viewer" title="Presentación"></iframe>
+
+        <p class="credit">Markus Spiske's picture on Unsplash</p>
     </div>
 </body>
 </html>

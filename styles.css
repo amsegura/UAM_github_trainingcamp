@@ -1,3 +1,34 @@
+/* =========================================================================
+   GitHub Training — hoja de estilos
+   -------------------------------------------------------------------------
+   POR QUÉ CAMBIABAN LOS TAMAÑOS EN EL PROYECTOR
+
+   En la versión anterior las POSICIONES estaban en % (left: 20%, top: 25%...)
+   pero los TAMAÑOS en px (width: 300px, font-size: 32px...). Al cambiar de
+   pantalla, las posiciones se reajustaban y los tamaños no, así que la
+   composición se descuadraba: los logos quedaban enormes o diminutos
+   respecto al hueco donde iban.
+
+   Ahora todo —tamaños, posiciones, separaciones y tipografía— sale de una
+   sola unidad:
+
+       --u: min(1vw, 1.6vh);
+
+   1vw depende del ancho de la ventana y 1vh del alto. Tomando el MÍNIMO de
+   los dos, el diseño se ajusta siempre a la dimensión que se queda corta, así
+   que en 16:9, en 16:10 o en un proyector 4:3 las proporciones entre logos,
+   botones y separaciones se mantienen idénticas.
+
+   Si en el aula lo ves todo un poco grande o pequeño, cambia SOLO --escala.
+   ========================================================================= */
+
+:root {
+    --escala: 1.0;                                  /* <-- único ajuste global */
+    --u: calc(min(1vw, 1.6vh) * var(--escala));     /* unidad base proporcional */
+}
+
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
     padding: 0;
@@ -6,102 +37,106 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* ---------- Contenedor general ----------
+   Antes era posicionamiento absoluto elemento a elemento. Ahora es una
+   columna flexible: el navegador reparte los huecos y nada se solapa. */
 .container {
     position: relative;
+    width: 100%;
     height: 100vh;
     display: flex;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: calc(var(--u) * 4);
+    overflow: hidden;
 }
 
-.logo {
-    position: absolute;
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+/* ---------- Logos de las instituciones ----------
+   Conservo la proporción que tenías: UAM es vez y media IMDEA (450 / 300 px). */
+.logos-instituciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--u) * 10);
 }
 
-.izquierda {
-    width: 300px;
-    left: 20%; /* Ajusta la posición a la izquierda */
-    top: 25%; /* Ajusta la posición hacia arriba */
-}
+.logo { max-width: 100%; height: auto; display: block; }
 
-.derecha {
-    width: 450px;
-    right: 20%; /* Ajusta la posición a la derecha */
-    top: 30%; /* Ajusta la posición hacia arriba */
-}
+.izquierda { width: calc(var(--u) * 17.5); }   /* ≈ los 300 px de antes */
+.derecha   { width: calc(var(--u) * 26);   }   /* ≈ los 450 px de antes */
 
+/* ---------- Logo de GitHub ---------- */
 .centro {
-    width: 250px;
-    top: 62%; /* Ajusta la posición hacia arriba */
-    transform: translateY(-50%); /* Centra verticalmente */
+    width: calc(var(--u) * 14.5);              /* ≈ los 250 px de antes */
+    margin-top: calc(var(--u) * 14);           /* separación con los logos de arriba */
+}
+
+/* ---------- Los dos botones ----------
+   La separación entre ellos y la distancia al logo de GitHub se derivan de la
+   misma unidad, así que la composición queda simétrica en cualquier pantalla. */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--u) * 5);
+    margin-top: calc(var(--u) * 7);
 }
 
 .link {
-    position: absolute;
-    bottom: 13%; /* Ajusta la posición del enlace */
-    font-size: 32px; /* Tamaño del texto del enlace */
-    color: white; /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
-    border-radius: 5px; /* Bordes redondeados */
+    min-width: calc(var(--u) * 20);            /* los dos botones miden igual */
+    text-align: center;
+    font-size: calc(var(--u) * 1.85);          /* ≈ los 32 px de antes */
+    color: white;
+    text-decoration: none;
+    padding: calc(var(--u) * 0.6) calc(var(--u) * 1.2);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: calc(var(--u) * 0.3);
+    transition: background-color 0.2s ease;
 }
 
-.link:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Cambia el fondo al pasar el ratón */
-}
+.link:hover,
+.link:focus { background-color: rgba(0, 0, 0, 0.9); }
 
+/* ---------- Visor del PDF ----------
+   Lo tenías oculto, así que lo dejo igual. Para mostrarlo, cambia
+   display: none por display: block. */
 .pdf-viewer {
-    display: none; /* Oculta el iframe inicialmente */
-    width: 100%;
-    height: 600px; /* Ajusta la altura según sea necesario */
-    border: none; /* Sin borde */
+    display: none;
+    width: calc(var(--u) * 60);
+    height: calc(var(--u) * 34);
+    margin-top: calc(var(--u) * 3);
+    border: none;
 }
 
+/* ---------- Crédito de la foto ---------- */
 .credit {
-    position: absolute; /* Posiciona el texto en relación a la contenedor */
-    bottom: 5%; /* Ajusta la posición hacia abajo */
-    right: 5%; 
-    font-size: 12px; /* Tamaño del texto */
-    color: white; /* Color del texto */
-    text-align: center; /* Centra el texto */
-    width: auto; /* Asegura que el texto ocupe todo el ancho */
-    opacity: 0.8; /* Hace el texto un poco transparente */
+    position: absolute;
+    bottom: calc(var(--u) * 2);
+    right: calc(var(--u) * 3);
+    margin: 0;
+    font-size: calc(var(--u) * 0.85);
+    color: white;
+    opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-    .izquierda {
-        width: 25%; /* Ajusta el tamaño en móviles */
-        left: 10%; /* Centra la imagen */
-        top: 10%; /* Ajusta la posición */
+/* =========================================================================
+   Pantallas estrechas o verticales (móvil, tablet en vertical).
+   Aquí sí cambia la composición: los botones se apilan y los logos crecen
+   en proporción al ancho, porque en vertical sobra alto y falta ancho.
+   ========================================================================= */
+@media (max-aspect-ratio: 3/4), (max-width: 768px) {
+    :root { --u: calc(min(2.6vw, 1.6vh) * var(--escala)); }
+
+    .logos-instituciones { gap: calc(var(--u) * 6); }
+
+    .centro    { margin-top: calc(var(--u) * 10); }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        gap: calc(var(--u) * 3);
+        margin-top: calc(var(--u) * 6);
     }
 
-    .derecha {
-        width: 35%; /* Ajusta el tamaño en móviles */
-        right: 10%; /* Centra la imagen */
-        top: 10%; /* Ajusta la posición */
-    }
-
-    .centro {
-        width: 25%; /* Ajusta el tamaño en móviles */
-        top: 60%; /* Ajusta la posición */
-    }
-
-    .link {
-        font-size: 16px; /* Reduce el tamaño del texto en móviles */
-        bottom: 10%; /* Ajusta la posición del enlace */
-    }
-
-    .pdf-viewer {
-        height: 400px; /* Ajusta la altura del iframe en móviles */
-    }
-
-    .credit {
-        font-size: 6px; /* Reduce el tamaño del texto en móviles */
-        bottom: 3%; /* Ajusta la posición */
-    }
+    .link { min-width: calc(var(--u) * 34); }
 }
