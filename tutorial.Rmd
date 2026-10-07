@@ -460,9 +460,9 @@ window.addEventListener('load', function () {
       var box = document.createElement('div');
       box.className = 'toc-logos';
       box.innerHTML =
-        '<img src="Imagenes_clase/imdea.png"  alt="IMDEA">' +
-        '<img src="Imagenes_clase/UAM.png"    alt="UAM">'   +
-        '<img src="Imagenes_clase/github.png" alt="GitHub">';
+        '<img src="images/imdea.png"  alt="IMDEA">' +
+        '<img src="images/UAM.png"    alt="UAM">'   +
+        '<img src="images/github.png" alt="GitHub">';
       toc.parentNode.insertBefore(box, toc);
     }
 
